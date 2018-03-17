@@ -2,12 +2,11 @@
 // File Name: Grain.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 4
+// Assignment Number: 5
 
 #include "Grain.hpp"
 
-const double AVERAGE_TEST_WEIGHT = 60.0;
-const double IDEAL_MOISTURE_LEVEL = 12.0;
+
 
 //Default constructor
 Grain::Grain(){
@@ -23,16 +22,6 @@ Grain::Grain(double moistureLevel, double foreignMaterial) : moistureLevel(moist
 Grain::~Grain()
 {}
 
-//Returning AVERAGE_TEST_WEIGHT
- const double Grain::getAverageTestWeight() const {
-    return AVERAGE_TEST_WEIGHT;
-}
-
-//Returning IDEAL_MOISTURE_LEVEL
-const double Grain::getIdealMoistureLevel() const{
-    return IDEAL_MOISTURE_LEVEL;
-}
-
 //Returning moisture level
 double Grain::getMoistureLevel() const {
     return moistureLevel;
@@ -41,4 +30,9 @@ double Grain::getMoistureLevel() const {
 //Returning Foreign material
 double Grain::getForeignMaterial() const {
     return foreignMaterial;
+}
+
+//a string representing the calling object’s grain type
+std::string Grain::toString() const {
+	return getType();
 }

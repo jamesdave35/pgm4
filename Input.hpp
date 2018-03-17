@@ -9,8 +9,10 @@
 
 #ifndef INPUT_H_
 #define INPUT_H_
-
 #include "Tickets.hpp"
+#include "Wheat.hpp"
+#include "Milo.hpp"
+#include "Soybean.hpp"
 
 /**
  * The Input class allows input of various values from the console

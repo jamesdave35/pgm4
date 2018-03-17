@@ -53,20 +53,20 @@ int Tickets::size() const {
   return ticketArraySize;
 }
 
-//Overiding equality operator
- const Tickets& Tickets::operator =(const Tickets& tickets) {
-  if(ticketArrayCapacity != tickets.ticketArrayCapacity){
-    delete[] ticketArray;
-    ticketArray = new Ticket[tickets.ticketArrayCapacity];
-  }
+//Overiding assignment operator
+const Tickets& Tickets::operator =(const Tickets& tickets) {
+ if(ticketArrayCapacity != tickets.ticketArrayCapacity){
+   delete[] ticketArray;
+   ticketArray = new Ticket[tickets.ticketArrayCapacity];
+ }
 
-  ticketArrayCapacity = tickets.ticketArrayCapacity;
-  ticketArraySize = tickets.ticketArraySize;
-  for(int i = 0; i < ticketArraySize; i++){
-    ticketArray[i] = tickets[i];
-  }
+ ticketArrayCapacity = tickets.ticketArrayCapacity;
+ ticketArraySize = tickets.ticketArraySize;
+ for(int i = 0; i < ticketArraySize; i++){
+   ticketArray[i] = tickets[i];
+ }
 
-  return *this;
+ return *this;
 }
 
 //Overriding  array operator

@@ -9,6 +9,9 @@
 #ifndef GRAIN_H_
 #define GRAIN_H_
 
+#include<string>
+
+
 /**
  * The Grain class identifies properties of a sample of grain
  */
@@ -21,21 +24,30 @@ public:
 	Grain(double moistureLevel, double foreignMaterial);
 
 	// Destructor
-	~Grain();
+	virtual ~Grain();
 
-	// Accessor to return grain's average test weight (lbs/bushel)
-	const double getAverageTestWeight() const;
+	// Pure virtual accessor to return the grain's average test weight (lbs/bushel)
+	virtual const double getAverageTestWeight() const = 0;
 
-	// Accessor to return grain's ideal moisture level (percent)
-	const double getIdealMoistureLevel() const;
+	// Pure virtual accessor to return the grain's ideal moisture level (percent)
+	virtual const double getIdealMoistureLevel() const = 0;
 
-	// Accessor to return sample's moisture level (percent)
+	// Pure virtual function to return a copy of the calling object (percent)
+	virtual Grain* clone() const = 0;
+
+	// Pure virtual function to get string representation of the calling object's grain type
+	virtual std::string getType() const = 0;
+
+	// Accessor to return sample's moisture level in percentage
 	double getMoistureLevel() const;
 
-	// Accessor to return sample's foreign material (percent)
+	// Accessor to return sample's foreign material in percentage
 	double getForeignMaterial() const;
 
-private:
+	// Member function to return a string representing the calling object’s grain type
+	std::string toString() const;
+
+protected:
 	// Member variables
 	double moistureLevel;
 	double foreignMaterial;
