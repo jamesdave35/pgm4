@@ -2,7 +2,7 @@
 // File Name: Milo.hpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 5
+// Assignment Number: 6
 
 #ifndef MILO_H_
 #define MILO_H_

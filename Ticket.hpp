@@ -2,7 +2,7 @@
 // File Name: Ticket.hpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 5
+// Assignment Number: 6
 
 //Importing all neccessary libraries to be used
 #include <string>
@@ -27,7 +27,7 @@ private:
     Ticket();
 
    //Custom constructor
-    Ticket(const std::string number, const float grossWeight, const float tareWeight, const Grain* newSample);
+    Ticket(const std::string number, const float grossWeight, const float tareWeight, const Grain* newSample, time_t timeStamp);
 
    //Copy Constructor
    Ticket(const Ticket& ticket);
@@ -56,5 +56,7 @@ private:
    float calNetBushels() const;
    float calForeignMaterialDockage() const;
    std::string toString() const;
+   static std::string headerRow();
+   std::string receipt() const;
 };
 #endif

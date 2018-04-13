@@ -2,7 +2,7 @@
 // File Name: Wheat.hpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 5
+// Assignment Number: 6
 
 #ifndef WHEAT_H_
 #define WHEAT_H_

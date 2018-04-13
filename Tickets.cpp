@@ -2,7 +2,7 @@
 // File Name: Tickets.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 5
+// Assignment Number: 6
 
 #include <iostream>
 #include "Tickets.hpp"

@@ -2,7 +2,7 @@
 // File Name: Soybean.hpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 5
+// Assignment Number: 6
 
 #ifndef SOYBEAN_H_
 #define SOYBEAN_H_

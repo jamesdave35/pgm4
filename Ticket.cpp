@@ -1,7 +1,7 @@
 // File Name: Ticket.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 5
+// Assignment Number: 6
 
 //Importing all neccessary libraries
 #include <string>
@@ -23,8 +23,8 @@ using namespace std;
 }
 
 //Custom constructor
- Ticket::Ticket(const string number, const float grossWeight, const float tareWeight, const Grain* newSample)
-  : ticketNumber(number), grossWeight(grossWeight), tareWeight(tareWeight), timestamp(time(nullptr))
+ Ticket::Ticket(const string number, const float grossWeight, const float tareWeight, const Grain* newSample, time_t timeStamp)
+  : ticketNumber(number), grossWeight(grossWeight), tareWeight(tareWeight), timestamp(timeStamp)
   {
     if(newSample != nullptr){
       this->sample = newSample->clone();
@@ -176,4 +176,31 @@ string Ticket::toString() const
    stringOutput << "\t" << this->calNetBushels() << " Net Bushels\n";
 
   return stringOutput.str();
+}
+
+string Ticket::headerRow()  {
+
+  return "Type|Date|Time|Number|GrossWeight|TareWeight|NetWeight|GrossBushels|MoistureLevel|MoistureLevelDockage|ForeignMaterial|ForeignMaterialDockage|NetBushels";
+
+}
+
+string Ticket::receipt() const {
+  char date[20];
+  strftime(date, 20, "%Y%m%d", localtime(&timestamp));
+
+  char timeOutput[20];
+  strftime(timeOutput, 20, "%H%M%S", localtime(&timestamp));
+
+
+  stringstream stringOutput;
+  stringOutput << setprecision(0) << showpoint << fixed;
+  stringOutput << "\n" << sample->toString() << "|" << date << "|" << timeOutput << "|" << ticketNumber;
+  stringOutput << "|" << grossWeight << "|" << tareWeight << "|";
+  stringOutput << setprecision(2);
+  stringOutput << this->calNetWeight() << "|" << this->calGrosBushels() << "|" << this->sample->getMoistureLevel();
+  stringOutput << "|" << this->calMoistureDockage() << "|" << this->sample->getForeignMaterial() << "|" << this->calForeignMaterialDockage();
+  stringOutput << "|" << this->calNetBushels();
+
+  return stringOutput.str();
+
 }

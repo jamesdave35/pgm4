@@ -2,9 +2,10 @@
 // File Name: Output.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 5
+// Assignment Number: 6
 
 #include <iostream>
+#include <fstream>
 #include <iomanip>
 #include "Output.hpp"
 #include "Ticket.hpp"
@@ -13,10 +14,27 @@ using namespace std;
 
 
  void Output::outputTickets(const Tickets& tickets) {
-  //Looping through list of tickets to print out each ticket
-  for(int i = 0; i < tickets.size(); i++){
-    cout << tickets[i] << endl;
-  }
+
+   //Variable for file output
+   ofstream fileOutput;
+
+   //Opening the file
+   fileOutput.open("HarvestTicketReceipts.txt");
+
+
+   if(!fileOutput.good()) {
+     cout << "Sorry file doesn't exist" << endl;
+   } else {
+
+     fileOutput << Ticket::headerRow() << endl;
+
+     //Looping through each ticket and outputing their receipts.
+     for(int i = 0; i < tickets.size(); i++) {
+       fileOutput << tickets[i].receipt() << endl;
+     }
+   }
+
+   fileOutput.close();
 }
 
 void Output::outputSummary(const Tickets& tickets) {
