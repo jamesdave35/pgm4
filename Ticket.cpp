@@ -1,7 +1,7 @@
 // File Name: Ticket.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 //Importing all neccessary libraries
 #include <string>
@@ -51,14 +51,30 @@ Ticket::~Ticket() {
 }
 
 //Overloading equality operator
-bool Ticket::operator== (const Ticket &t1) const
-  {
+bool Ticket::operator== (const Ticket &t1) const {
+
     return ( this->ticketNumber == t1.getTicketNumber());
   }
 
+//Static functions which compares the net bushels of two tickets.
+ bool Ticket::compare(Ticket &t1, Ticket &t2) {
+
+   bool islessThan = false;
+   int type1 = (t1.getSample()) ? t1.getSample()->getTypeValue() : 0;
+   int type2 = (t2.getSample()) ? t2.getSample()->getTypeValue() : 0;
+
+   if(type1 < type2) {
+     islessThan = true;
+   } else if (type1 == type2 && t1.calNetBushels() > t2.calNetBushels()) {
+    islessThan = true;
+  }
+   return islessThan;
+
+ }
+
 //Overloading insertion operator
-ostream& operator<< (ostream &out, const Ticket &t)
-  {
+ostream& operator<< (ostream &out, const Ticket &t) {
+
     out.precision(2);
     out << t.toString();
     return out;

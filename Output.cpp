@@ -2,18 +2,20 @@
 // File Name: Output.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include "Output.hpp"
-#include "Ticket.hpp"
+
+using namespace ContainerTemplate;
 using namespace std;
 
 
 
- void Output::outputTickets(const Tickets& tickets) {
+
+ void Output::outputTickets(const Array<Ticket>& tickets) {
 
    //Variable for file output
    ofstream fileOutput;
@@ -37,7 +39,7 @@ using namespace std;
    fileOutput.close();
 }
 
-void Output::outputSummary(const Tickets& tickets) {
+void Output::outputSummary(const Array<Ticket>& tickets) {
   //Variables to hold total gross bushels and total net brushels
   float totGrossBushels = 0;
   float totNetBushels = 0;

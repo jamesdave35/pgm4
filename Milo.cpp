@@ -3,7 +3,7 @@
 // File Name: Wheat.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 #include "Milo.hpp"
 
@@ -39,4 +39,10 @@ Milo* Milo::clone() const {
 // Returning  the string representation of the derived class name
 std::string Milo::getType() const {
 	return "Grain Sorghum";
+}
+
+ //Returning value of the type
+int Milo::getTypeValue() const {
+
+	return 3;
 }

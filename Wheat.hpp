@@ -2,7 +2,7 @@
 // File Name: Wheat.hpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 #ifndef WHEAT_H_
 #define WHEAT_H_
@@ -28,6 +28,9 @@ class Wheat: public Grain {
 
 	    // Member function to return  the string representation of the derived class name
 	    std::string getType() const;
+
+      //Member function to return value of the type
+      int getTypeValue() const;
 
 };
 

@@ -2,7 +2,7 @@
 // File Name: Soybean.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 #include "Soybean.hpp"
 
@@ -38,4 +38,10 @@ Soybean* Soybean::clone() const {
 // Returning  the string representation of the derived class name
 std::string Soybean::getType() const {
 	return "Soybean";
+}
+
+ //Returning value of the type
+int Soybean::getTypeValue() const {
+
+	return 2;
 }

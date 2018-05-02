@@ -2,7 +2,7 @@
 // File Name: Wheat.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 #include "Wheat.hpp"
 
@@ -38,4 +38,10 @@ Wheat* Wheat::clone() const {
 // Returning  the string representation of the derived class name
 std::string Wheat::getType() const {
 	return "Wheat";
+}
+
+//Returning value of the type
+int Wheat::getTypeValue() const {
+
+ return 1;
 }

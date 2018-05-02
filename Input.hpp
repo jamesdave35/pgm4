@@ -9,7 +9,8 @@
 
 #ifndef INPUT_H_
 #define INPUT_H_
-#include "Tickets.hpp"
+#include "Array.h"
+#include "Ticket.hpp"
 #include "Wheat.hpp"
 #include "Milo.hpp"
 #include "Soybean.hpp"
@@ -20,7 +21,7 @@
 class Input {
 public:
 	// Return list of tickets (prompt user for tickets, adding each to list of tickets)
-	static void inputTickets(Tickets& tickets);
+	static void inputTickets(ContainerTemplate::Array<Ticket>& tickets);
 
 private:
 	// Default constructor (use private to prevent creation)

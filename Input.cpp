@@ -2,7 +2,7 @@
 // File Name: Input.cpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 
 #include <iostream>
@@ -11,9 +11,9 @@
 #include <string>
 #include <cstring>
 #include "Input.hpp"
-#include "Ticket.hpp"
 
 using namespace std;
+using namespace ContainerTemplate;
 
 //Enumaration for the different types of grain
 enum Type {
@@ -22,7 +22,7 @@ enum Type {
   MILO,
 };
 
- void Input::inputTickets(Tickets& tickets) {
+ void Input::inputTickets(Array<Ticket>& tickets) {
    //Variable for file input
    ifstream fileInput;
 

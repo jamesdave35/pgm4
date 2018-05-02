@@ -38,6 +38,9 @@ public:
 	// Pure virtual function to get string representation of the calling object's grain type
 	virtual std::string getType() const = 0;
 
+	//Pure virtual function to get value of type1
+	virtual int getTypeValue() const = 0;
+
 	// Accessor to return sample's moisture level in percentage
 	double getMoistureLevel() const;
 

@@ -2,7 +2,7 @@
 // File Name: Ticket.hpp
 // Author: James Meli
 // Student ID: a738m747
-// Assignment Number: 6
+// Assignment Number: 7
 
 //Importing all neccessary libraries to be used
 #include <string>
@@ -57,6 +57,8 @@ private:
    float calForeignMaterialDockage() const;
    std::string toString() const;
    static std::string headerRow();
+   static bool compare(Ticket &t1, Ticket &t2);
    std::string receipt() const;
+
 };
 #endif
